@@ -1,10 +1,10 @@
 <template>
   <div>
-    <active-element
+    <ActiveElement
       :topic-title="activeTopic && activeTopic.title"
       :text="activeTopic && activeTopic.fullText"
-    ></active-element>
-    <knowledge-base :topics="topics" @select-topic="activateTopic"></knowledge-base>
+    />
+    <KnowledgeBase :topics="topics" @select-topic="activateTopic" />
   </div>
 </template>
 

@@ -8,9 +8,15 @@ import KnowledgeGrid from './components/KnowledgeGrid.vue';
 
 const app = createApp(App);
 
-app.component('active-element', ActiveElement);
-app.component('knowledge-base', KnowledgeBase);
-app.component('knowledge-element', KnowledgeElement);
-app.component('knowledge-grid', KnowledgeGrid);
+const components = [
+  ActiveElement,
+  KnowledgeBase,
+  KnowledgeGrid,
+  KnowledgeElement,
+];
+
+components.forEach(component => {
+  app.component(component.name, component)
+})
 
 app.mount('#app');

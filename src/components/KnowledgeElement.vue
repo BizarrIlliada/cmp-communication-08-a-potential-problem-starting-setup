@@ -8,6 +8,7 @@
 
 <script>
 export default {
+  name: 'KnowledgeElement',
   props: ['id', 'topicName', 'description'],
   emits: ['select-topic'],
 };

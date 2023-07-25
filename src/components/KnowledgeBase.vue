@@ -1,12 +1,13 @@
 <template>
   <section>
     <h2>Select a Topic</h2>
-    <knowledge-grid :topics="topics" @select-topic="$emit('select-topic', $event)"></knowledge-grid>
+    <KnowledgeGrid :topics="topics" @select-topic="$emit('select-topic', $event)" />
   </section>
 </template>
 
 <script>
 export default {
+  name: 'KnowledgeBase',
   props: ['topics'],
   emits: ['select-topic'],
 };
