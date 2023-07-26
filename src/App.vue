@@ -4,7 +4,7 @@
       :topic-title="activeTopic && activeTopic.title"
       :text="activeTopic && activeTopic.fullText"
     />
-    <KnowledgeBase :topics="topics" @select-topic="activateTopic" />
+    <KnowledgeBase @select-topic="activateTopic" />
   </div>
 </template>
 
@@ -32,11 +32,33 @@ export default {
       activeTopic: null,
     };
   },
+
+  provide() {
+    return {
+      topics: this.topics,
+    }
+  },
+
   methods: {
     activateTopic(topicId) {
       this.activeTopic = this.topics.find((topic) => topic.id === topicId);
     },
   },
+
+  mounted() {
+    setTimeout(() => {
+      this.topics.push(
+        {
+          id: 'lorem',
+          title: 'Lorem Ipsum',
+          description:
+            'Lorem ipsum, dolor sit amet consectetur adipisicing.',
+          fullText:
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde vel, soluta iure nihil impedit facere aspernatur placeat ut animi quos hic in esse illum possimus quibusdam laboriosam repellendus! Quo, dolor!',
+        }
+      )
+    }, 3000);
+  }
 };
 </script>
 

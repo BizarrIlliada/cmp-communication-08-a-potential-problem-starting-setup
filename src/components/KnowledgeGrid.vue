@@ -14,7 +14,7 @@
 <script>
 export default {
   name: 'KnowledgeGrid',
-  props: ['topics'],
+  inject: ['topics'],
   emits: ['select-topic']
 };
 </script>
